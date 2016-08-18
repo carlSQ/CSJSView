@@ -15,6 +15,13 @@
 		1B17867F1D62C4750029D662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B17867D1D62C4750029D662 /* LaunchScreen.storyboard */; };
 		1B17868A1D62C4750029D662 /* CSJSViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786891D62C4750029D662 /* CSJSViewTests.m */; };
 		1B1786951D62C4750029D662 /* CSJSViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786941D62C4750029D662 /* CSJSViewUITests.m */; };
+		1B1786A51D62C51B0029D662 /* UIViewController+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786A41D62C51B0029D662 /* UIViewController+CSJSView.m */; };
+		1B1786AB1D62EF6D0029D662 /* CSJSViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786AA1D62EF6D0029D662 /* CSJSViewEngine.m */; };
+		1B5FFAF51D64115800EB5818 /* CSJSViewEngine.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B5FFAF41D64115800EB5818 /* CSJSViewEngine.js */; };
+		1B5FFAFA1D643DE500EB5818 /* Layout.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FFAF71D643DE500EB5818 /* Layout.c */; };
+		1B5FFAFB1D643DE500EB5818 /* Layout.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B5FFAF91D643DE500EB5818 /* Layout.js */; };
+		1B7F9FEC1D6492AD00D191CD /* UIView+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F9FEB1D6492AD00D191CD /* UIView+CSJSView.m */; };
+		1B7F9FEF1D6493B900D191CD /* UIColor+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F9FEE1D6493B900D191CD /* UIColor+CSJSView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,18 @@
 		1B1786901D62C4750029D662 /* CSJSViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSJSViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1786941D62C4750029D662 /* CSJSViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSJSViewUITests.m; sourceTree = "<group>"; };
 		1B1786961D62C4750029D662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B1786A31D62C51B0029D662 /* UIViewController+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CSJSView.h"; sourceTree = "<group>"; };
+		1B1786A41D62C51B0029D662 /* UIViewController+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CSJSView.m"; sourceTree = "<group>"; };
+		1B1786A91D62EF6D0029D662 /* CSJSViewEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewEngine.h; sourceTree = "<group>"; };
+		1B1786AA1D62EF6D0029D662 /* CSJSViewEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSViewEngine.m; sourceTree = "<group>"; };
+		1B5FFAF41D64115800EB5818 /* CSJSViewEngine.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = CSJSViewEngine.js; sourceTree = "<group>"; };
+		1B5FFAF71D643DE500EB5818 /* Layout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Layout.c; sourceTree = "<group>"; };
+		1B5FFAF81D643DE500EB5818 /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
+		1B5FFAF91D643DE500EB5818 /* Layout.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = Layout.js; path = CSJSViewClass/Layout/Layout.js; sourceTree = SOURCE_ROOT; };
+		1B7F9FEA1D6492AD00D191CD /* UIView+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSJSView.h"; sourceTree = "<group>"; };
+		1B7F9FEB1D6492AD00D191CD /* UIView+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSJSView.m"; sourceTree = "<group>"; };
+		1B7F9FED1D6493B900D191CD /* UIColor+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CSJSView.h"; sourceTree = "<group>"; };
+		1B7F9FEE1D6493B900D191CD /* UIColor+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CSJSView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +100,7 @@
 		1B1786631D62C4750029D662 = {
 			isa = PBXGroup;
 			children = (
+				1B1786A21D62C4C30029D662 /* CSJSViewClass */,
 				1B17866E1D62C4750029D662 /* CSJSView */,
 				1B1786881D62C4750029D662 /* CSJSViewTests */,
 				1B1786931D62C4750029D662 /* CSJSViewUITests */,
@@ -103,6 +123,7 @@
 			children = (
 				1B1786721D62C4750029D662 /* AppDelegate.h */,
 				1B1786731D62C4750029D662 /* AppDelegate.m */,
+				1B5FFAF91D643DE500EB5818 /* Layout.js */,
 				1B1786751D62C4750029D662 /* ViewController.h */,
 				1B1786761D62C4750029D662 /* ViewController.m */,
 				1B1786781D62C4750029D662 /* Main.storyboard */,
@@ -138,6 +159,32 @@
 				1B1786961D62C4750029D662 /* Info.plist */,
 			);
 			path = CSJSViewUITests;
+			sourceTree = "<group>";
+		};
+		1B1786A21D62C4C30029D662 /* CSJSViewClass */ = {
+			isa = PBXGroup;
+			children = (
+				1B1786A31D62C51B0029D662 /* UIViewController+CSJSView.h */,
+				1B1786A41D62C51B0029D662 /* UIViewController+CSJSView.m */,
+				1B7F9FEA1D6492AD00D191CD /* UIView+CSJSView.h */,
+				1B7F9FEB1D6492AD00D191CD /* UIView+CSJSView.m */,
+				1B7F9FED1D6493B900D191CD /* UIColor+CSJSView.h */,
+				1B7F9FEE1D6493B900D191CD /* UIColor+CSJSView.m */,
+				1B1786A91D62EF6D0029D662 /* CSJSViewEngine.h */,
+				1B1786AA1D62EF6D0029D662 /* CSJSViewEngine.m */,
+				1B5FFAF41D64115800EB5818 /* CSJSViewEngine.js */,
+				1B5FFAF61D643DE500EB5818 /* Layout */,
+			);
+			path = CSJSViewClass;
+			sourceTree = "<group>";
+		};
+		1B5FFAF61D643DE500EB5818 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				1B5FFAF71D643DE500EB5818 /* Layout.c */,
+				1B5FFAF81D643DE500EB5818 /* Layout.h */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +299,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B5FFAFB1D643DE500EB5818 /* Layout.js in Resources */,
+				1B5FFAF51D64115800EB5818 /* CSJSViewEngine.js in Resources */,
 				1B17867F1D62C4750029D662 /* LaunchScreen.storyboard in Resources */,
 				1B17867C1D62C4750029D662 /* Assets.xcassets in Resources */,
 				1B17867A1D62C4750029D662 /* Main.storyboard in Resources */,
@@ -279,7 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1786A51D62C51B0029D662 /* UIViewController+CSJSView.m in Sources */,
+				1B7F9FEC1D6492AD00D191CD /* UIView+CSJSView.m in Sources */,
+				1B5FFAFA1D643DE500EB5818 /* Layout.c in Sources */,
+				1B7F9FEF1D6493B900D191CD /* UIColor+CSJSView.m in Sources */,
 				1B1786771D62C4750029D662 /* ViewController.m in Sources */,
+				1B1786AB1D62EF6D0029D662 /* CSJSViewEngine.m in Sources */,
 				1B1786741D62C4750029D662 /* AppDelegate.m in Sources */,
 				1B1786711D62C4750029D662 /* main.m in Sources */,
 			);
@@ -507,6 +561,7 @@
 				1B17869B1D62C4750029D662 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B17869C1D62C4750029D662 /* Build configuration list for PBXNativeTarget "CSJSViewTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +570,7 @@
 				1B17869E1D62C4750029D662 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B17869F1D62C4750029D662 /* Build configuration list for PBXNativeTarget "CSJSViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +579,7 @@
 				1B1786A11D62C4750029D662 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "CSJSViewEngine.h"
+#import "UIViewController+CSJSView.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  [CSJSViewEngine startupCSJSViewEngineWithRootPath:nil];
+  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[UIViewController alloc] initWithSourcePath:@"Layout.js" module:@"Layout" initParams:@{@"key":@"hello word"}]];
+  [self.window makeKeyAndVisible];
   return YES;
 }
 
