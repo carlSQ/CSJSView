@@ -9,5 +9,8 @@
 #import "UIView+CSJSView.h"
 
 @implementation UIView (CSJSView)
-
++ (UIView *)jsViewWithFrame:(CGRect)frame {
+  UIView * view = [[UIView alloc]initWithFrame:frame];
+  return view;
+};
 @end

@@ -58,7 +58,7 @@ var global = this;
 
         runApplication: function(moduleName, path, initParameters) {
             if (registerModules[moduleName]) {
-                registerModules[moduleName].run(initParameters);
+               return registerModules[moduleName].run(initParameters);
             } else {
                 requireImpl(path);
                return registerModules[moduleName].run(initParameters);

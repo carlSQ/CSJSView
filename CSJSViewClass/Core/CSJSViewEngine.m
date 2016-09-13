@@ -8,6 +8,9 @@
 
 #import "CSJSViewEngine.h"
 #import <UIKit/UIKit.h>
+#import "CSJSTableView.h"
+#import "CSJSViewController.h"
+#import "CSJSViewControllerProxy.h"
 
 
 @interface CSJSViewEngine ()
@@ -17,6 +20,8 @@
 @property(nonatomic, strong) JSContext *jsContext;
 
 @property(nonatomic, strong) NSString *jsRootPath;
+
+@property (nonatomic) JSContextGroupRef contextGroup;
 
 @end
 
@@ -38,13 +43,21 @@
 
 - (instancetype)init {
   if (self = [super init]) {
-    _virtualMachine = [JSVirtualMachine new];
-    _jsContext = [[JSContext alloc]initWithVirtualMachine:_virtualMachine];
+ 
+//    _contextGroup = JSContextGroupCreate();
+//    JSGlobalContextRef globalContext = JSGlobalContextCreateInGroup(_contextGroup, NULL);
+    _jsContext = [JSContext new];
+    _virtualMachine = _jsContext.virtualMachine;
     _jsContext.exceptionHandler = ^(JSContext *context, JSValue *exception) {
       NSLog(@"exception %@",exception.debugDescription);
     };
   }
   return self;
+}
+
++ (void)registerClass:(NSString *)className class:(Class)class {
+  CSJSViewEngine *engine = [CSJSViewEngine sharedCSJSViewEngine];
+  engine.jsContext[className] = class;
 }
 
 
@@ -123,6 +136,16 @@
   
   engine.jsContext[@"JSView"] = [UIView class];
   engine.jsContext[@"JSColor"] = [UIColor class];
+  [CSJSViewEngine registerClass:@"JSTableView" class:[CSJSTableView class]];
+  [CSJSViewEngine registerClass:@"JSButton" class:[UIButton class]];
+  [CSJSViewEngine registerClass:@"JSLabel" class:[UILabel class]];
+  [CSJSViewEngine registerClass:@"JSFont" class:[UIFont class]];
+  [CSJSViewEngine registerClass:@"JSTableViewCell" class:[UITableViewCell class]];
+  [CSJSViewEngine registerClass:@"JSImage" class:[UIImage class]];
+  [CSJSViewEngine registerClass:@"JSImageView" class:[UIImageView class]];
+  [CSJSViewEngine registerClass:@"JSViewController" class:[CSJSViewController class]];
+  [CSJSViewEngine registerClass:@"JSNavigationViewController" class:[UINavigationController class]];
+  [CSJSViewEngine registerClass:@"CSJSViewControllerProxy" class:[CSJSViewControllerProxy class]];
 }
 
 
@@ -132,7 +155,7 @@
                     method:(NSString *)method
                  arguments:(NSArray *)arguments {
   
-  JSValue *globalValue = [CSJSViewEngine sharedCSJSViewEngine].jsContext.globalObject;
+  JSValue *globalValue = [CSJSViewEngine JSContext].globalObject;
   
   JSValue *moduleValue = nil;
   
@@ -146,7 +169,7 @@
 #endif
   }
   
-   JSValue *resultValue = [moduleValue?:globalValue invokeMethod:method withArguments:arguments];
+  JSValue *resultValue = [moduleValue?:globalValue invokeMethod:method withArguments:arguments];
   
   return resultValue;
 

@@ -15,13 +15,25 @@
 		1B17867F1D62C4750029D662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B17867D1D62C4750029D662 /* LaunchScreen.storyboard */; };
 		1B17868A1D62C4750029D662 /* CSJSViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786891D62C4750029D662 /* CSJSViewTests.m */; };
 		1B1786951D62C4750029D662 /* CSJSViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786941D62C4750029D662 /* CSJSViewUITests.m */; };
-		1B1786A51D62C51B0029D662 /* UIViewController+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786A41D62C51B0029D662 /* UIViewController+CSJSView.m */; };
-		1B1786AB1D62EF6D0029D662 /* CSJSViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1786AA1D62EF6D0029D662 /* CSJSViewEngine.m */; };
-		1B5FFAF51D64115800EB5818 /* CSJSViewEngine.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B5FFAF41D64115800EB5818 /* CSJSViewEngine.js */; };
-		1B5FFAFA1D643DE500EB5818 /* Layout.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FFAF71D643DE500EB5818 /* Layout.c */; };
-		1B5FFAFB1D643DE500EB5818 /* Layout.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B5FFAF91D643DE500EB5818 /* Layout.js */; };
-		1B7F9FEC1D6492AD00D191CD /* UIView+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F9FEB1D6492AD00D191CD /* UIView+CSJSView.m */; };
-		1B7F9FEF1D6493B900D191CD /* UIColor+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F9FEE1D6493B900D191CD /* UIColor+CSJSView.m */; };
+		1B1B9AC21D6DAFAB00C62A5C /* UINavigationController+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1B9AC11D6DAFAA00C62A5C /* UINavigationController+CSJSView.m */; };
+		1B51E5461D72DA0E002A8801 /* CSJSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B51E5451D72DA0E002A8801 /* CSJSLayout.m */; };
+		1B64EA781D6D7232009FD448 /* CSJSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA621D6D7232009FD448 /* CSJSTableView.m */; };
+		1B64EA791D6D7232009FD448 /* UIButton+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA641D6D7232009FD448 /* UIButton+CSJSView.m */; };
+		1B64EA7A1D6D7232009FD448 /* UIColor+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA661D6D7232009FD448 /* UIColor+CSJSView.m */; };
+		1B64EA7B1D6D7232009FD448 /* UIFont+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA681D6D7232009FD448 /* UIFont+CSJSView.m */; };
+		1B64EA7C1D6D7232009FD448 /* UIImage+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA6A1D6D7232009FD448 /* UIImage+CSJSView.m */; };
+		1B64EA7D1D6D7232009FD448 /* UIImageView+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA6C1D6D7232009FD448 /* UIImageView+CSJSView.m */; };
+		1B64EA7E1D6D7232009FD448 /* UILabel+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA6E1D6D7232009FD448 /* UILabel+CSJSView.m */; };
+		1B64EA7F1D6D7232009FD448 /* UITableViewCell+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA701D6D7232009FD448 /* UITableViewCell+CSJSView.m */; };
+		1B64EA801D6D7232009FD448 /* UIView+CSJSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA721D6D7232009FD448 /* UIView+CSJSView.m */; };
+		1B64EA811D6D7232009FD448 /* Layout.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B64EA741D6D7232009FD448 /* Layout.c */; };
+		1B7C98291D76822E005A360F /* UIView+CSJSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C98281D76822E005A360F /* UIView+CSJSLayout.m */; };
+		1B9036041D8561090064DF11 /* CSJSValueMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9036031D8561090064DF11 /* CSJSValueMemory.m */; };
+		1B9036071D868EF20064DF11 /* CSJSViewControllerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9036061D868EF20064DF11 /* CSJSViewControllerProxy.m */; };
+		1BC65F681D6C9F8500734969 /* CSJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC65F671D6C9F8500734969 /* CSJSViewController.m */; };
+		1BF99C751D65AF7C0022B1BC /* CSJSViewEngine.js in Resources */ = {isa = PBXBuildFile; fileRef = 1BF99C6C1D65AF7C0022B1BC /* CSJSViewEngine.js */; };
+		1BF99C761D65AF7C0022B1BC /* CSJSViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF99C6D1D65AF7C0022B1BC /* CSJSViewEngine.m */; };
+		1BF99C7B1D65B2E10022B1BC /* Layout.js in Resources */ = {isa = PBXBuildFile; fileRef = 1BF99C7A1D65B2E10022B1BC /* Layout.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,18 +70,42 @@
 		1B1786901D62C4750029D662 /* CSJSViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSJSViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1786941D62C4750029D662 /* CSJSViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSJSViewUITests.m; sourceTree = "<group>"; };
 		1B1786961D62C4750029D662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B1786A31D62C51B0029D662 /* UIViewController+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CSJSView.h"; sourceTree = "<group>"; };
-		1B1786A41D62C51B0029D662 /* UIViewController+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CSJSView.m"; sourceTree = "<group>"; };
-		1B1786A91D62EF6D0029D662 /* CSJSViewEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewEngine.h; sourceTree = "<group>"; };
-		1B1786AA1D62EF6D0029D662 /* CSJSViewEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSViewEngine.m; sourceTree = "<group>"; };
-		1B5FFAF41D64115800EB5818 /* CSJSViewEngine.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = CSJSViewEngine.js; sourceTree = "<group>"; };
-		1B5FFAF71D643DE500EB5818 /* Layout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Layout.c; sourceTree = "<group>"; };
-		1B5FFAF81D643DE500EB5818 /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
-		1B5FFAF91D643DE500EB5818 /* Layout.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = Layout.js; path = CSJSViewClass/Layout/Layout.js; sourceTree = SOURCE_ROOT; };
-		1B7F9FEA1D6492AD00D191CD /* UIView+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSJSView.h"; sourceTree = "<group>"; };
-		1B7F9FEB1D6492AD00D191CD /* UIView+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSJSView.m"; sourceTree = "<group>"; };
-		1B7F9FED1D6493B900D191CD /* UIColor+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CSJSView.h"; sourceTree = "<group>"; };
-		1B7F9FEE1D6493B900D191CD /* UIColor+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CSJSView.m"; sourceTree = "<group>"; };
+		1B1B9AC01D6DAFAA00C62A5C /* UINavigationController+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CSJSView.h"; sourceTree = "<group>"; };
+		1B1B9AC11D6DAFAA00C62A5C /* UINavigationController+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CSJSView.m"; sourceTree = "<group>"; };
+		1B51E5441D72DA0E002A8801 /* CSJSLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSLayout.h; sourceTree = "<group>"; };
+		1B51E5451D72DA0E002A8801 /* CSJSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSLayout.m; sourceTree = "<group>"; };
+		1B64EA611D6D7232009FD448 /* CSJSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSTableView.h; sourceTree = "<group>"; };
+		1B64EA621D6D7232009FD448 /* CSJSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSTableView.m; sourceTree = "<group>"; };
+		1B64EA631D6D7232009FD448 /* UIButton+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA641D6D7232009FD448 /* UIButton+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA651D6D7232009FD448 /* UIColor+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA661D6D7232009FD448 /* UIColor+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA671D6D7232009FD448 /* UIFont+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA681D6D7232009FD448 /* UIFont+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA691D6D7232009FD448 /* UIImage+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA6A1D6D7232009FD448 /* UIImage+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA6B1D6D7232009FD448 /* UIImageView+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA6C1D6D7232009FD448 /* UIImageView+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA6D1D6D7232009FD448 /* UILabel+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA6E1D6D7232009FD448 /* UILabel+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA6F1D6D7232009FD448 /* UITableViewCell+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA701D6D7232009FD448 /* UITableViewCell+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA711D6D7232009FD448 /* UIView+CSJSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSJSView.h"; sourceTree = "<group>"; };
+		1B64EA721D6D7232009FD448 /* UIView+CSJSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSJSView.m"; sourceTree = "<group>"; };
+		1B64EA741D6D7232009FD448 /* Layout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Layout.c; sourceTree = "<group>"; };
+		1B64EA751D6D7232009FD448 /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
+		1B7C98271D76822E005A360F /* UIView+CSJSLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSJSLayout.h"; sourceTree = "<group>"; };
+		1B7C98281D76822E005A360F /* UIView+CSJSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSJSLayout.m"; sourceTree = "<group>"; };
+		1B9036021D8561090064DF11 /* CSJSValueMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSValueMemory.h; sourceTree = "<group>"; };
+		1B9036031D8561090064DF11 /* CSJSValueMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSValueMemory.m; sourceTree = "<group>"; };
+		1B9036051D868EF20064DF11 /* CSJSViewControllerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewControllerProxy.h; sourceTree = "<group>"; };
+		1B9036061D868EF20064DF11 /* CSJSViewControllerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSViewControllerProxy.m; sourceTree = "<group>"; };
+		1BC65F661D6C9F8500734969 /* CSJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewController.h; sourceTree = "<group>"; };
+		1BC65F671D6C9F8500734969 /* CSJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSViewController.m; sourceTree = "<group>"; };
+		1BF99C6B1D65AF7C0022B1BC /* CSJSViewEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewEngine.h; sourceTree = "<group>"; };
+		1BF99C6C1D65AF7C0022B1BC /* CSJSViewEngine.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = CSJSViewEngine.js; sourceTree = "<group>"; };
+		1BF99C6D1D65AF7C0022B1BC /* CSJSViewEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSViewEngine.m; sourceTree = "<group>"; };
+		1BF99C7A1D65B2E10022B1BC /* Layout.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Layout.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +141,7 @@
 				1B1786881D62C4750029D662 /* CSJSViewTests */,
 				1B1786931D62C4750029D662 /* CSJSViewUITests */,
 				1B17866D1D62C4750029D662 /* Products */,
+				1BC65F191D6C98BD00734969 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,8 +160,8 @@
 			children = (
 				1B1786721D62C4750029D662 /* AppDelegate.h */,
 				1B1786731D62C4750029D662 /* AppDelegate.m */,
-				1B5FFAF91D643DE500EB5818 /* Layout.js */,
 				1B1786751D62C4750029D662 /* ViewController.h */,
+				1BF99C7A1D65B2E10022B1BC /* Layout.js */,
 				1B1786761D62C4750029D662 /* ViewController.m */,
 				1B1786781D62C4750029D662 /* Main.storyboard */,
 				1B17867B1D62C4750029D662 /* Assets.xcassets */,
@@ -164,27 +201,74 @@
 		1B1786A21D62C4C30029D662 /* CSJSViewClass */ = {
 			isa = PBXGroup;
 			children = (
-				1B1786A31D62C51B0029D662 /* UIViewController+CSJSView.h */,
-				1B1786A41D62C51B0029D662 /* UIViewController+CSJSView.m */,
-				1B7F9FEA1D6492AD00D191CD /* UIView+CSJSView.h */,
-				1B7F9FEB1D6492AD00D191CD /* UIView+CSJSView.m */,
-				1B7F9FED1D6493B900D191CD /* UIColor+CSJSView.h */,
-				1B7F9FEE1D6493B900D191CD /* UIColor+CSJSView.m */,
-				1B1786A91D62EF6D0029D662 /* CSJSViewEngine.h */,
-				1B1786AA1D62EF6D0029D662 /* CSJSViewEngine.m */,
-				1B5FFAF41D64115800EB5818 /* CSJSViewEngine.js */,
-				1B5FFAF61D643DE500EB5818 /* Layout */,
+				1B64EA601D6D7232009FD448 /* CSJSViewKit */,
+				1B64EA731D6D7232009FD448 /* Layout */,
+				1BF99C6A1D65AF7C0022B1BC /* Core */,
 			);
 			path = CSJSViewClass;
 			sourceTree = "<group>";
 		};
-		1B5FFAF61D643DE500EB5818 /* Layout */ = {
+		1B64EA601D6D7232009FD448 /* CSJSViewKit */ = {
 			isa = PBXGroup;
 			children = (
-				1B5FFAF71D643DE500EB5818 /* Layout.c */,
-				1B5FFAF81D643DE500EB5818 /* Layout.h */,
+				1B64EA611D6D7232009FD448 /* CSJSTableView.h */,
+				1B64EA621D6D7232009FD448 /* CSJSTableView.m */,
+				1B1B9AC01D6DAFAA00C62A5C /* UINavigationController+CSJSView.h */,
+				1B1B9AC11D6DAFAA00C62A5C /* UINavigationController+CSJSView.m */,
+				1B64EA631D6D7232009FD448 /* UIButton+CSJSView.h */,
+				1B64EA641D6D7232009FD448 /* UIButton+CSJSView.m */,
+				1B64EA651D6D7232009FD448 /* UIColor+CSJSView.h */,
+				1B64EA661D6D7232009FD448 /* UIColor+CSJSView.m */,
+				1B64EA671D6D7232009FD448 /* UIFont+CSJSView.h */,
+				1B64EA681D6D7232009FD448 /* UIFont+CSJSView.m */,
+				1B64EA691D6D7232009FD448 /* UIImage+CSJSView.h */,
+				1B64EA6A1D6D7232009FD448 /* UIImage+CSJSView.m */,
+				1B64EA6B1D6D7232009FD448 /* UIImageView+CSJSView.h */,
+				1B64EA6C1D6D7232009FD448 /* UIImageView+CSJSView.m */,
+				1B64EA6D1D6D7232009FD448 /* UILabel+CSJSView.h */,
+				1B64EA6E1D6D7232009FD448 /* UILabel+CSJSView.m */,
+				1B64EA6F1D6D7232009FD448 /* UITableViewCell+CSJSView.h */,
+				1B64EA701D6D7232009FD448 /* UITableViewCell+CSJSView.m */,
+				1B64EA711D6D7232009FD448 /* UIView+CSJSView.h */,
+				1B64EA721D6D7232009FD448 /* UIView+CSJSView.m */,
+			);
+			path = CSJSViewKit;
+			sourceTree = "<group>";
+		};
+		1B64EA731D6D7232009FD448 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				1B64EA741D6D7232009FD448 /* Layout.c */,
+				1B64EA751D6D7232009FD448 /* Layout.h */,
+				1B51E5441D72DA0E002A8801 /* CSJSLayout.h */,
+				1B51E5451D72DA0E002A8801 /* CSJSLayout.m */,
+				1B7C98271D76822E005A360F /* UIView+CSJSLayout.h */,
+				1B7C98281D76822E005A360F /* UIView+CSJSLayout.m */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		1BC65F191D6C98BD00734969 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BF99C6A1D65AF7C0022B1BC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1BF99C6B1D65AF7C0022B1BC /* CSJSViewEngine.h */,
+				1BF99C6D1D65AF7C0022B1BC /* CSJSViewEngine.m */,
+				1B9036021D8561090064DF11 /* CSJSValueMemory.h */,
+				1B9036031D8561090064DF11 /* CSJSValueMemory.m */,
+				1BC65F661D6C9F8500734969 /* CSJSViewController.h */,
+				1BC65F671D6C9F8500734969 /* CSJSViewController.m */,
+				1B9036051D868EF20064DF11 /* CSJSViewControllerProxy.h */,
+				1B9036061D868EF20064DF11 /* CSJSViewControllerProxy.m */,
+				1BF99C6C1D65AF7C0022B1BC /* CSJSViewEngine.js */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +383,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B5FFAFB1D643DE500EB5818 /* Layout.js in Resources */,
-				1B5FFAF51D64115800EB5818 /* CSJSViewEngine.js in Resources */,
+				1BF99C7B1D65B2E10022B1BC /* Layout.js in Resources */,
+				1BF99C751D65AF7C0022B1BC /* CSJSViewEngine.js in Resources */,
 				1B17867F1D62C4750029D662 /* LaunchScreen.storyboard in Resources */,
 				1B17867C1D62C4750029D662 /* Assets.xcassets in Resources */,
 				1B17867A1D62C4750029D662 /* Main.storyboard in Resources */,
@@ -328,13 +412,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B1786A51D62C51B0029D662 /* UIViewController+CSJSView.m in Sources */,
-				1B7F9FEC1D6492AD00D191CD /* UIView+CSJSView.m in Sources */,
-				1B5FFAFA1D643DE500EB5818 /* Layout.c in Sources */,
-				1B7F9FEF1D6493B900D191CD /* UIColor+CSJSView.m in Sources */,
+				1B9036071D868EF20064DF11 /* CSJSViewControllerProxy.m in Sources */,
+				1B64EA7B1D6D7232009FD448 /* UIFont+CSJSView.m in Sources */,
+				1B64EA811D6D7232009FD448 /* Layout.c in Sources */,
+				1BF99C761D65AF7C0022B1BC /* CSJSViewEngine.m in Sources */,
 				1B1786771D62C4750029D662 /* ViewController.m in Sources */,
-				1B1786AB1D62EF6D0029D662 /* CSJSViewEngine.m in Sources */,
+				1B64EA781D6D7232009FD448 /* CSJSTableView.m in Sources */,
+				1B64EA7A1D6D7232009FD448 /* UIColor+CSJSView.m in Sources */,
+				1B64EA791D6D7232009FD448 /* UIButton+CSJSView.m in Sources */,
+				1B64EA7D1D6D7232009FD448 /* UIImageView+CSJSView.m in Sources */,
 				1B1786741D62C4750029D662 /* AppDelegate.m in Sources */,
+				1B64EA801D6D7232009FD448 /* UIView+CSJSView.m in Sources */,
+				1B9036041D8561090064DF11 /* CSJSValueMemory.m in Sources */,
+				1B64EA7E1D6D7232009FD448 /* UILabel+CSJSView.m in Sources */,
+				1B1B9AC21D6DAFAB00C62A5C /* UINavigationController+CSJSView.m in Sources */,
+				1B64EA7C1D6D7232009FD448 /* UIImage+CSJSView.m in Sources */,
+				1B7C98291D76822E005A360F /* UIView+CSJSLayout.m in Sources */,
+				1B51E5461D72DA0E002A8801 /* CSJSLayout.m in Sources */,
+				1BC65F681D6C9F8500734969 /* CSJSViewController.m in Sources */,
+				1B64EA7F1D6D7232009FD448 /* UITableViewCell+CSJSView.m in Sources */,
 				1B1786711D62C4750029D662 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +505,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -416,6 +513,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -460,6 +558,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -478,9 +577,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CNS46A8385;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = CSJSView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sq.CSJSView;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.sq.CSJSView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -489,9 +594,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CNS46A8385;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = CSJSView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sq.CSJSView;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.sq.CSJSView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
