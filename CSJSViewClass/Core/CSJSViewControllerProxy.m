@@ -16,33 +16,34 @@
 
 @implementation CSJSViewControllerProxy
 
-- (instancetype)initWithJSManagedValue:(JSManagedValue *)jsManagedValue
+- (instancetype)initWithJSManagedValue:(NSString *)jsAddress
                             controller:(CSJSViewController *)controller {
   if (self = [super init]) {
     self.controller = controller;
-    self.jsManagedValue = jsManagedValue;
+    self.jsAddress = jsAddress;
     
-    JSValue *selfValue = [JSValue valueWithObject:self inContext:[CSJSViewEngine JSContext]];
+    JSValue *jsValue = [CSJSViewEngine jsValueWith:jsAddress];
     
-     [jsManagedValue.value setObject:selfValue forKeyedSubscript:@"self"];
-//    [[CSJSViewEngine JSContext] setObject:[JSValue valueWithObject:self inContext:[CSJSViewEngine JSContext]] forKeyedSubscript:CSJS_NAME(self)];
+     [jsValue setObject:self forKeyedSubscript:@"self"];
 //    JSValueProtect([CSJSViewEngine JSContext].JSGlobalContextRef,self.jsManagedValue.value.JSValueRef);
-    [[CSJSViewEngine virtualMachine] addManagedReference:self.jsManagedValue  withOwner:self];
-    [CSJSValueMemory retain:self.jsManagedValue.value];
+//    [controller.context.virtualMachine addManagedReference:self.jsManagedValue  withOwner:self];
+//     [[CSJSViewEngine virtualMachine] addManagedReference:self.jsManagedValue  withOwner:self];
+//    [CSJSValueMemory retain:self.jsManagedValue.value];
   }
   return self;
 }
 
 - (void)clear {
-  [[CSJSViewEngine virtualMachine] removeManagedReference:self.jsManagedValue withOwner:self];
-//  [self.jsManagedValue.value deleteProperty:@"self"];
+  [[CSJSViewEngine jsValueWith:self.jsAddress] deleteProperty:@"self"];
+  [CSJSViewEngine releaseJSValueWith:self.jsAddress];
+ 
+//  [_controller.context.virtualMachine removeManagedReference:self.jsManagedValue withOwner:self];
 //  [self.jsManagedValue.value deleteProperty:CSJS_NAME(self)];
 //  [self.jsManagedValue.value setObject:[JSValue valueWithNullInContext:[CSJSViewEngine JSContext]] forKeyedSubscript:@"self"];
 //  [[CSJSViewEngine JSContext] setObject:[JSValue valueWithNullInContext:[CSJSViewEngine JSContext]] forKeyedSubscript:CSJS_NAME(self)];
 //  JSValueUnprotect([CSJSViewEngine JSContext].JSGlobalContextRef,self.jsManagedValue.value.JSValueRef);
 //  JSValueUnprotect([CSJSViewEngine JSContext].JSGlobalContextRef,self.jsManagedValue.value.JSValueRef);
-   [CSJSValueMemory release:self.jsManagedValue.value];
-  self.jsManagedValue = nil;
+//   [CSJSValueMemory release:self.jsManagedValue.value];
 }
 
 - (void)dealloc {

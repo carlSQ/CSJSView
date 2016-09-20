@@ -58,7 +58,7 @@
   CSJSViewController *controller = [CSJSViewController new];
   if (controller) {
     JSValue *moduleValue = [CSJSViewEngine executeJSCall:@"ModulesRegistry" method:@"runApplication" arguments:@[module,sourcePath, params]];
-    controller.controllerProxy = [[CSJSViewControllerProxy alloc]initWithJSManagedValue:[JSManagedValue managedValueWithValue:moduleValue] controller:controller];
+    controller.controllerProxy = [[CSJSViewControllerProxy alloc]initWithJSManagedValue:[moduleValue  toString] controller:controller];
     NSLog(@"viewcontroller create %@",controller);
   }
   return controller;
@@ -67,47 +67,40 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"GO" style:UIBarButtonItemStylePlain target:self action:@selector(go)];
-  [self.controllerProxy.jsManagedValue.value invokeMethod:@"viewDidLoad" withArguments:nil];
-}
-
-- (void)go {
-  [self.navigationController pushViewController:[CSJSViewController sourcePath:@"Layout.js" module:@"Layout" initParams:@{@"key":@"hello word"}] animated:YES];
-
+  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewDidLoad" withArguments:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
-  [self.controllerProxy.jsManagedValue.value invokeMethod:@"viewWillAppear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewWillAppear" withArguments:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
 
-  [self.controllerProxy.jsManagedValue.value invokeMethod:@"viewDidAppear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewDidAppear" withArguments:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
-  [self.controllerProxy.jsManagedValue.value invokeMethod:@"viewWillDisappear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewWillDisappear" withArguments:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
   [super viewDidDisappear:animated];
-  [self.controllerProxy.jsManagedValue.value invokeMethod:@"viewDidDisappear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewDidDisappear" withArguments:nil];
 }
 
 - (void)didReceiveMemoryWarning {
   
   [super didReceiveMemoryWarning];
   
-  [self.controllerProxy.jsManagedValue.value invokeMethod:@"didReceiveMemoryWarning" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"didReceiveMemoryWarning" withArguments:nil];
 }
 
 - (void)dealloc {
   [self.controllerProxy clear];
-  _controllerProxy = nil;
   NSLog(@"viewcontroller release %@",self);
 }
 

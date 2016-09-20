@@ -42,13 +42,39 @@ var global = this;
 
     global.require = require;
 
+
+    var ObjectPool = {};
+
+    var unqua = 0;
+
+    ObjectMemory = {
+
+        getObject: function(address) {
+            return ObjectPool[address];
+        },
+
+        releaseObject: function(address) {
+            delete ObjectPool[address];
+        },
+
+        retainObject: function(object) {
+            var address = '0x'+ (unqua++);
+            ObjectPool[address] = object;
+            return address;
+        }
+ 
+    };
+
+    global.ObjectMemory = ObjectMemory;
+
     var registerModules = {};
     ModulesRegistry = {
 
         registerModule: function(moduleName, module) {
             registerModules[moduleName] = {
                 run: function(initParameters) {
-                      return new module(initParameters);
+                        var moduleInstance  = new module(initParameters);
+                      return global.ObjectMemory.retainObject(moduleInstance);
                      }
             };
          },
@@ -68,7 +94,7 @@ var global = this;
     };
 
     global.ModulesRegistry = ModulesRegistry;
-
+ 
 
     class CSJSViewController {
 

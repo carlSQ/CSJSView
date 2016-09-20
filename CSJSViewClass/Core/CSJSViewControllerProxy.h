@@ -22,9 +22,9 @@
 
 @property(nonatomic, weak)CSJSViewController *controller;
 
-@property(nonatomic, strong) JSManagedValue *jsManagedValue;
+@property(nonatomic, strong) NSString *jsAddress;
 
-- (instancetype)initWithJSManagedValue:(JSManagedValue *)jsManagedValue
+- (instancetype)initWithJSManagedValue:(NSString *)jsAddress
                             controller:(CSJSViewController *)controller;
 - (void)clear;
 
