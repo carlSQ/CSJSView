@@ -2,11 +2,15 @@ var CSJSViewController = require('CSJSViewController');
 
 class Layout extends CSJSViewController {
   
+  constructor(initParameters) {
+    super(initParameters)
+  }
+  
   viewDidLoad () {
-    this.self.controller.title = this.initParameters["key"];
-    this.self.controller.view.backgroundColor = JSColor.jsColor("EE88CC");
+//    this.self.controller.title = this.initParameters["key"];
+//    this.self.controller.view.backgroundColor = JSColor.jsColor("EE88CC");
       Native_log(JSTableView);
-    this.tableview = JSTableView.jsTableViewWithFrameAndStyle(this.self.controller.view.frame,0);
+    this.tableview = JSTableView.jsTableViewWithFrameAndStyle({x:0,y:0,width:320,height:420},0);
     this.tableview.backgroundColor = JSColor.jsColor("CCDDEE");
     var that = this;
     this.tableview.jsDelegate = {
@@ -25,7 +29,15 @@ class Layout extends CSJSViewController {
 //        that.self.controller.navigationController.pushViewControllerAnimated(JSViewController.sourcePathModuleInitParams("Layout.js","Layout",{"key":"sq"}), true);
       }
     };
-    this.self.controller.view.addSubview(this.tableview);
+//    this.self.controller.view.addSubview(this.tableview);
+    if (this.tableview instanceof Object) {
+      let deserializedDictionary = {};
+      for (let key of Object.keys(this.tableview)) {
+        deserializedDictionary[key] = this.tableview[key];
+      }
+      Native_log(Object.getPrototypeOf(this.tableview.constructor));
+    }
+    return this.tableview;
   }
   
   viewWillAppear (animated) {
