@@ -27,9 +27,13 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @class CSJSViewControllerProxy;
+
 @interface CSJSViewController : UIViewController  <ViewControllerJSExport>
 
 @property(nonatomic, strong) CSJSViewControllerProxy *controllerProxy;
+//@property(nonatomic, strong) NSString *jsAddress;
+
+//@property(nonatomic, strong) JSContext *context;
 
 + (instancetype)sourcePath:(NSString *)sourcePath
 module:(NSString *)module

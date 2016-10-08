@@ -26,7 +26,7 @@ class Layout extends CSJSViewController {
       },
       didSelectRowAtIndexPath: function() {
         
-//        that.self.controller.navigationController.pushViewControllerAnimated(JSViewController.sourcePathModuleInitParams("Layout.js","Layout",{"key":"sq"}), true);
+        that.self.controller.navigationController.pushViewControllerAnimated(JSViewController.sourcePathModuleInitParams("Layout.js","Layout",{"key":"sq"}), true);
       }
     };
 //    this.self.controller.view.addSubview(this.tableview);

@@ -44,9 +44,10 @@
 - (instancetype)init {
   if (self = [super init]) {
  
-//    _contextGroup = JSContextGroupCreate();
-//    JSGlobalContextRef globalContext = JSGlobalContextCreateInGroup(_contextGroup, NULL);
-    _jsContext = [JSContext new];
+    _contextGroup = JSContextGroupCreate();
+    JSGlobalContextRef globalContext = JSGlobalContextCreateInGroup(_contextGroup, NULL);
+    _jsContext = [JSContext contextWithJSGlobalContextRef:globalContext];
+   
     _virtualMachine = _jsContext.virtualMachine;
     _jsContext.exceptionHandler = ^(JSContext *context, JSValue *exception) {
       NSLog(@"exception %@",exception.debugDescription);
@@ -67,6 +68,10 @@
 
 + (JSContext *)JSContext {
   return [CSJSViewEngine sharedCSJSViewEngine].jsContext;
+}
+
++ (JSContextGroupRef)contextGroup {
+  return [CSJSViewEngine sharedCSJSViewEngine].contextGroup;
 }
 
 + (void)startupCSJSViewEngineWithRootPath:(NSString *)jsRootPath {
@@ -148,7 +153,13 @@
   [CSJSViewEngine registerClass:@"CSJSViewControllerProxy" class:[CSJSViewControllerProxy class]];
 }
 
++ (JSValue *)jsValueWith:(NSString *)jsAddress {
+  return [self executeJSCall:@"ObjectMemory" method:@"getObject" arguments:@[jsAddress]];
+}
 
++ (void)releaseJSValueWith:(NSString *)jsAddress {
+  [self executeJSCall:@"ObjectMemory" method:@"releaseObject" arguments:@[jsAddress]];
+}
 
 
 + (JSValue *)executeJSCall:(NSString *)module

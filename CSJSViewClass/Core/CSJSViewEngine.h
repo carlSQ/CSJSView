@@ -20,6 +20,12 @@
 
 + (JSContext *)JSContext;
 
++ (JSContextGroupRef)contextGroup;
+
++ (JSValue *)jsValueWith:(NSString *)jsAddress;
+
++ (void)releaseJSValueWith:(NSString *)jsAddress;
+
 + (JSValue *)executeJSCall:(NSString *)module
                     method:(NSString *)method
                  arguments:(NSArray *)arguments;
