@@ -12,6 +12,10 @@
 
 @property(nonatomic,copy, readonly)NSString *uniqueAddress;
 
+@property(nonatomic, strong)NSMutableDictionary *strongVar;
+
+@property(nonatomic, strong)NSMapTable *weakVar;
+
 + (instancetype)bridgeObjectedWithUniqueAddress:(NSString *)uniqueAddress;
 
 @end

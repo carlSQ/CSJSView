@@ -9,98 +9,88 @@
 #import "CSJSViewController.h"
 #import <objc/runtime.h>
 #import "CSJSViewEngine.h"
-#import "CSJSViewControllerProxy.h"
+#import "CSJSBridgeObjectPool.h"
+
+@interface CSJSViewController ()
+
+@property(nonatomic, strong)NSMutableDictionary *vars;
+
+@end
 
 @implementation CSJSViewController
-
-#pragma mark - hook
-
-+ (void)load {
-  
-//  static dispatch_once_t token;
-//  
-//  dispatch_once(&token, ^{
-//    
-//    [self exchangeSel:@selector(viewDidLoad) newSel:@selector(CSJSView_viewDidLoad)];
-//    [self exchangeSel:@selector(viewWillAppear:) newSel:@selector(CSJSView_viewWillAppear:)];
-//    [self exchangeSel:@selector(viewDidAppear:) newSel:@selector(CSJSView_viewDidAppear:)];
-//    [self exchangeSel:@selector(viewWillDisappear:) newSel:@selector(CSJSView_viewWillDisappear:)];
-//    [self exchangeSel:@selector(viewDidDisappear:) newSel:@selector(CSJSView_viewDidDisappear:)];
-//    [self exchangeSel:@selector(didReceiveMemoryWarning) newSel:@selector(CSJSView_didReceiveMemoryWarning)];
-//    
-//  });
-  
-}
-
-
-+ (void)exchangeSel:(SEL)orginSel
-             newSel:(SEL)newSel {
-  
-  NSAssert(orginSel, @"orginMethod can not nil");
-  
-  NSAssert(newSel, @"newMethod can not nil");
-  
-  Method newMethod = class_getInstanceMethod([self class], newSel);
-  
-  Method orginMethod = class_getInstanceMethod([self class], orginSel);
-  
-  method_exchangeImplementations(orginMethod, newMethod);
-  
-}
-
-
-#pragma mark - init
-
 
 + (instancetype)sourcePath:(NSString *)sourcePath
                     module:(NSString *)module
                 initParams:(NSDictionary *)params {
+  
   CSJSViewController *controller = [CSJSViewController new];
+  
   if (controller) {
     JSValue *moduleValue = [CSJSViewEngine executeJSCall:@"ModulesRegistry" method:@"runApplication" arguments:@[module,sourcePath, params]];
-    controller.controllerProxy = [[CSJSViewControllerProxy alloc]initWithJSManagedValue:[moduleValue  toString] controller:controller];
+    controller.jsAddress = [moduleValue  toString];
+    [CSJSBridgeObjectPool setBridgeObjecte:controller forUniqueAddress:controller.jsAddress];
     NSLog(@"viewcontroller create %@",controller);
   }
+  
   return controller;
 }
 
+- (instancetype)init {
+  
+  if (self = [super init]) {
+    _vars = [NSMutableDictionary dictionary];
+  }
+  
+  return self;
+}
+
+- (void)updateVar:(id)var forKey:(NSString *)key {
+  [_vars setValue:var forKey:key];
+}
+
+- (id)varForKey:(NSString *)key {
+  if ([key isEqualToString:@"self"]) {
+    return self;
+  }
+  return [_vars valueForKey:key];
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewDidLoad" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.jsAddress] invokeMethod:@"viewDidLoad" withArguments:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
-  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewWillAppear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.jsAddress] invokeMethod:@"viewWillAppear" withArguments:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
 
-  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewDidAppear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.jsAddress] invokeMethod:@"viewDidAppear" withArguments:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
-  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewWillDisappear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.jsAddress] invokeMethod:@"viewWillDisappear" withArguments:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
   [super viewDidDisappear:animated];
-  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"viewDidDisappear" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.jsAddress] invokeMethod:@"viewDidDisappear" withArguments:nil];
 }
 
 - (void)didReceiveMemoryWarning {
   
   [super didReceiveMemoryWarning];
   
-  [[CSJSViewEngine jsValueWith:self.controllerProxy.jsAddress] invokeMethod:@"didReceiveMemoryWarning" withArguments:nil];
+  [[CSJSViewEngine jsValueWith:self.jsAddress] invokeMethod:@"didReceiveMemoryWarning" withArguments:nil];
 }
 
 - (void)dealloc {
-  [self.controllerProxy clear];
+  [CSJSViewEngine releaseJSValueWith:self.jsAddress];
   NSLog(@"viewcontroller release %@",self);
 }
 

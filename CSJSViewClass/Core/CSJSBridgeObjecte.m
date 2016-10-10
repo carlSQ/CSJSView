@@ -11,13 +11,7 @@
 
 @interface CSJSBridgeObjecte ()
 
-@property(nonatomic, strong)NSMutableDictionary *strongVar;
-
-@property(nonatomic, strong)NSMapTable *weakVar;
-
 @end
-
-
 
 @implementation CSJSBridgeObjecte
 
@@ -31,11 +25,13 @@
 }
 
 - (instancetype)initWithUniqueAddress:(NSString *)uniqueAddress {
+  
   if (self = [super init]) {
     _uniqueAddress = uniqueAddress;
     _strongVar = [NSMutableDictionary dictionary];
-    _weakVar = [NSMapTable weakToStrongObjectsMapTable];
+    _weakVar = [NSMapTable strongToWeakObjectsMapTable];
   }
+  
   return self;
 }
 

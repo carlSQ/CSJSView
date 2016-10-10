@@ -2,8 +2,6 @@ var global = this;
 
 (function() {
 
-
-
     var modules = {};
     function Module (path) {
       return {
@@ -58,9 +56,8 @@ var global = this;
         },
 
         retainObject: function(object) {
-            var address = '0x'+ (unqua++);
-            ObjectPool[address] = object;
-            return address;
+            ObjectPool[object.nativeBridgeIdentifier] = object;
+            return object.nativeBridgeIdentifier;
         }
  
     };
@@ -68,6 +65,7 @@ var global = this;
     global.ObjectMemory = ObjectMemory;
 
     var registerModules = {};
+
     ModulesRegistry = {
 
         registerModule: function(moduleName, module) {
@@ -94,13 +92,16 @@ var global = this;
     };
 
     global.ModulesRegistry = ModulesRegistry;
- 
 
     class CSJSViewController {
-
+ 
         constructor(initParameters) {
             this.initParameters = initParameters;
+            const nativeBridgeIdentifier = UUID();
+            this.nativeBridgeIdentifier = nativeBridgeIdentifier;
         }
+
+        get self() { return varForKey(this.nativeBridgeIdentifier, "self") }
 
         viewDidLoad() {
         }
@@ -121,6 +122,9 @@ var global = this;
         }
 
     }
+ 
+ 
+ 
     var module = {
                     path: 'CSJSViewController',
                     exports: CSJSViewController,

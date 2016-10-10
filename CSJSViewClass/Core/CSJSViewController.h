@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "CSJSInteraction.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol ViewControllerJSExport <JSExport>
@@ -28,12 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class CSJSViewControllerProxy;
 
-@interface CSJSViewController : UIViewController  <ViewControllerJSExport>
+@interface CSJSViewController : UIViewController  <ViewControllerJSExport, CSJSInteraction>
 
-@property(nonatomic, strong) CSJSViewControllerProxy *controllerProxy;
-//@property(nonatomic, strong) NSString *jsAddress;
-
-//@property(nonatomic, strong) JSContext *context;
+@property(nonatomic, strong) NSString *jsAddress;
 
 + (instancetype)sourcePath:(NSString *)sourcePath
 module:(NSString *)module

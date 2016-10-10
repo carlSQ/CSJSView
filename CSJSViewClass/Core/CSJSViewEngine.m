@@ -10,7 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "CSJSTableView.h"
 #import "CSJSViewController.h"
-#import "CSJSViewControllerProxy.h"
+#import "CSJSBridgeObjectPool.h"
+#import "CSJSInteraction.h"
 
 
 @interface CSJSViewEngine ()
@@ -123,20 +124,41 @@
   engine.jsContext[@"Native_log"] = ^() {
     
 #ifdef DEBUG
-    
     NSArray *args = [JSContext currentArguments];
     
     for (JSValue *value in args) {
        NSLog(@"CSJSView: %@",[value toString].debugDescription);
     }
-   
-    
 #endif
     
   };
   
   engine.jsContext[@"Native_Assert"] = ^(JSValue *booValue, JSValue *desValue) {
     NSAssert(booValue.toBool, desValue.toString);
+  };
+  
+  engine.jsContext[@"UUID"] = ^NSString *() {
+    return [[NSUUID UUID] UUIDString];
+  };
+  
+  engine.jsContext[@"varForKey"] = ^id (JSValue *objectAddress, JSValue *key) {
+    
+    NSString * address = [objectAddress toString];
+    
+    id<CSJSInteraction> object = [CSJSBridgeObjectPool bridgeObjecteWithUniqueAddress:address];
+    if ([object respondsToSelector:@selector(varForKey:)]) {
+     return [object varForKey:[key toString]];
+    }
+    return nil;
+  };
+  
+  engine.jsContext[@"updateVarForKey"] = ^(JSValue *objectAddress, JSValue *key, JSValue *value) {
+    NSString * address = [objectAddress toString];
+    
+    id<CSJSInteraction> object = [CSJSBridgeObjectPool bridgeObjecteWithUniqueAddress:address];
+    if ([object respondsToSelector:@selector(updateVar:forKey:)]) {
+      return [object updateVar:[value toObject] forKey:[key toString]];
+    }
   };
   
   engine.jsContext[@"JSView"] = [UIView class];
@@ -150,7 +172,6 @@
   [CSJSViewEngine registerClass:@"JSImageView" class:[UIImageView class]];
   [CSJSViewEngine registerClass:@"JSViewController" class:[CSJSViewController class]];
   [CSJSViewEngine registerClass:@"JSNavigationViewController" class:[UINavigationController class]];
-  [CSJSViewEngine registerClass:@"CSJSViewControllerProxy" class:[CSJSViewControllerProxy class]];
 }
 
 + (JSValue *)jsValueWith:(NSString *)jsAddress {

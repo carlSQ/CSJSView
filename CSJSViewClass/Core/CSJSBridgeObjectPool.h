@@ -11,9 +11,9 @@
 
 @interface CSJSBridgeObjectPool : NSObject
 
-+ (void)setBridgeObjecte:(CSJSBridgeObjecte *)bridgeObjecte
++ (void)setBridgeObjecte:(id)bridgeObjecte
         forUniqueAddress:(NSString *)uniqueAddress;
 
-+ (CSJSBridgeObjecte *)bridgeObjecteWithUniqueAddress:(NSString *)uniqueAddress;
++ (id)bridgeObjecteWithUniqueAddress:(NSString *)uniqueAddress;
 
 @end

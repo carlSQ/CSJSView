@@ -10,7 +10,7 @@
 #import "CSJSViewEngine.h"
 #include <JavaScriptCore/JSBase.h>
 #import <JavaScriptCore/JSValueRef.h>
-#import "CSJSValueMemory.h"
+
 
 #define CSJS_NAME(value) [NSString stringWithFormat:@"CSJS_%@",@([value hash]).stringValue]
 

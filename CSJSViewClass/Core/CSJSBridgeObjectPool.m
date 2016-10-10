@@ -28,18 +28,20 @@
 - (instancetype)init {
   
   if (self = [super init]) {
-    _pool = [NSMapTable strongToStrongObjectsMapTable];
+    _pool = [NSMapTable strongToWeakObjectsMapTable];
   }
   
   return self;
 }
 
-+ (void)setBridgeObjecte:(CSJSBridgeObjecte *)bridgeObjecte
++ (void)setBridgeObjecte:(id)bridgeObjecte
         forUniqueAddress:(NSString *)uniqueAddress {
+  
   [[CSJSBridgeObjectPool sharedBridgeObjectPool].pool setObject:bridgeObjecte forKey:uniqueAddress];
+  
 }
 
-+ (CSJSBridgeObjecte *)bridgeObjecteWithUniqueAddress:(NSString *)uniqueAddress {
++ (id)bridgeObjecteWithUniqueAddress:(NSString *)uniqueAddress {
   
   return [[CSJSBridgeObjectPool sharedBridgeObjectPool].pool objectForKey:uniqueAddress];
   

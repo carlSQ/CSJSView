@@ -12,7 +12,7 @@
 
 
 @interface CSJSTableView (){
-   JSManagedValue *jsManagedValue;
+   JSValue *jsManagedValue;
 }
 
 @end
@@ -30,13 +30,12 @@
 }
 
 - (JSValue *)jsDelegate {
-  return jsManagedValue.value;
+  return jsManagedValue;
 
 }
 
 - (void)setJsDelegate:(JSValue *)jsDelegate {
-  jsManagedValue = [JSManagedValue managedValueWithValue:jsDelegate];
-  [[JSContext currentContext].virtualMachine addManagedReference:jsManagedValue withOwner:self];
+  jsManagedValue = jsDelegate;
 }
 
 #pragma mark - UITableviewDataSource

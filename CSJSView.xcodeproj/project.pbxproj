@@ -106,6 +106,7 @@
 		1B7C98281D76822E005A360F /* UIView+CSJSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSJSLayout.m"; sourceTree = "<group>"; };
 		1B9036051D868EF20064DF11 /* CSJSViewControllerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewControllerProxy.h; sourceTree = "<group>"; };
 		1B9036061D868EF20064DF11 /* CSJSViewControllerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSViewControllerProxy.m; sourceTree = "<group>"; };
+		1BA0699D1DAB98F100AE8AA7 /* CSJSInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSInteraction.h; sourceTree = "<group>"; };
 		1BC65F661D6C9F8500734969 /* CSJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewController.h; sourceTree = "<group>"; };
 		1BC65F671D6C9F8500734969 /* CSJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSJSViewController.m; sourceTree = "<group>"; };
 		1BF99C6B1D65AF7C0022B1BC /* CSJSViewEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSJSViewEngine.h; sourceTree = "<group>"; };
@@ -265,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				1B4953331D9EC93E00C46304 /* CSJSBridge.h */,
+				1BA0699D1DAB98F100AE8AA7 /* CSJSInteraction.h */,
 				1B4953341D9EC93E00C46304 /* CSJSBridge.m */,
 				1B4953301D9E9C4C00C46304 /* CSJSBridgeObjectPool.h */,
 				1B4953311D9E9C4C00C46304 /* CSJSBridgeObjectPool.m */,
