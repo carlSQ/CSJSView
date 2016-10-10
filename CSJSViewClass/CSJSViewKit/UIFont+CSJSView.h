@@ -20,6 +20,6 @@
 
 @end
 
-@interface UIFont (CSJSView)
+@interface UIFont (CSJSView)<FontExport>
 
 @end

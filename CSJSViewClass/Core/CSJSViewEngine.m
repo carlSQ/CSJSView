@@ -182,6 +182,10 @@
   [self executeJSCall:@"ObjectMemory" method:@"releaseObject" arguments:@[jsAddress]];
 }
 
++ (void)retainJSValue:(JSValue *)value {
+    [self executeJSCall:@"ObjectMemory" method:@"retainObject" arguments:@[value]];
+}
+
 
 + (JSValue *)executeJSCall:(NSString *)module
                     method:(NSString *)method

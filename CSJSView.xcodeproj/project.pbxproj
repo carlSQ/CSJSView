@@ -266,8 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				1B4953331D9EC93E00C46304 /* CSJSBridge.h */,
-				1BA0699D1DAB98F100AE8AA7 /* CSJSInteraction.h */,
 				1B4953341D9EC93E00C46304 /* CSJSBridge.m */,
+				1BA0699D1DAB98F100AE8AA7 /* CSJSInteraction.h */,
 				1B4953301D9E9C4C00C46304 /* CSJSBridgeObjectPool.h */,
 				1B4953311D9E9C4C00C46304 /* CSJSBridgeObjectPool.m */,
 				1B49532D1D9E922A00C46304 /* CSJSBridgeObjecte.h */,

@@ -62,7 +62,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-
   [[CSJSViewEngine jsValueWith:self.jsAddress] invokeMethod:@"viewWillAppear" withArguments:nil];
 }
 

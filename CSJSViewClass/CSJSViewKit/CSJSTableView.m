@@ -12,7 +12,7 @@
 
 
 @interface CSJSTableView (){
-   JSValue *jsManagedValue;
+  NSString *jsValueAdress;
 }
 
 @end
@@ -30,12 +30,16 @@
 }
 
 - (JSValue *)jsDelegate {
-  return jsManagedValue;
+  return [CSJSViewEngine jsValueWith:jsValueAdress];
 
 }
 
 - (void)setJsDelegate:(JSValue *)jsDelegate {
-  jsManagedValue = jsDelegate;
+  if ([[jsDelegate objectForKeyedSubscript:@"nativeBridgeIdentifier"] isUndefined]) {
+    [jsDelegate setObject:[[NSUUID UUID] UUIDString] forKeyedSubscript:@"nativeBridgeIdentifier"];
+  }
+  [CSJSViewEngine retainJSValue:jsDelegate];
+  jsValueAdress = [[jsDelegate objectForKeyedSubscript:@"nativeBridgeIdentifier"] toString];
 }
 
 #pragma mark - UITableviewDataSource
@@ -150,6 +154,7 @@
 }
 
 - (void)dealloc {
+  [CSJSViewEngine releaseJSValueWith:jsValueAdress];
   NSLog(@"UITableView RELEASE %@", self);
 }
 

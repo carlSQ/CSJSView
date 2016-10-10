@@ -47,6 +47,7 @@ class Layout extends CSJSViewController {
   }
   
   viewDidAppear (animated) {
+    
     Native_log("test viewDidAppear");
   }
   

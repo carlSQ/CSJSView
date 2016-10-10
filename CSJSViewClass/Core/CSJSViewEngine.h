@@ -26,6 +26,8 @@
 
 + (void)releaseJSValueWith:(NSString *)jsAddress;
 
++ (void)retainJSValue:(JSValue *)value;
+
 + (JSValue *)executeJSCall:(NSString *)module
                     method:(NSString *)method
                  arguments:(NSArray *)arguments;

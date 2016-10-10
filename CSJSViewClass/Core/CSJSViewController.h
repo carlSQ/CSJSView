@@ -11,6 +11,7 @@
 #import "CSJSInteraction.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 @protocol ViewControllerJSExport <JSExport>
 
 @property(nonatomic, strong) UIView *view;
@@ -34,8 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) NSString *jsAddress;
 
 + (instancetype)sourcePath:(NSString *)sourcePath
-module:(NSString *)module
-initParams:(NSDictionary *)params;
+                    module:(NSString *)module
+                initParams:(NSDictionary *)params;
 
 @end
 NS_ASSUME_NONNULL_END
